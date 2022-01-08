@@ -12,7 +12,7 @@ $(document).ready(function () {
 			alert("Please enter your username and password");
 		} else {
 			let data = await fetch("https://pastebin.com/raw.php?i=z4y55tBr", {
-				mode: "no-cors",
+				mode: "same-origin",
 				method: "GET",
 			});
 
@@ -26,7 +26,7 @@ $(document).ready(function () {
 						element.pass == $("#password").val()
 					) {
 						let html = await fetch("https://pastebin.com/raw/wjdU23WJ", {
-							mode: "no-cors",
+							mode: "same-origin",
 							method: "GET",
 						});
 						console.log(html);
