@@ -14,8 +14,9 @@ $(document).ready(function () {
 			let data = await fetch("https://pastebin.com/raw.php?i=z4y55tBr", {
 				mode: "no-cors",
 				method: "GET",
-			}).then((response) => response.json());
+			});
 
+			console.log(data);
 			let success = false;
 			for (const user in data.validUsers) {
 				if (Object.hasOwnProperty.call(data.validUsers, user)) {
@@ -27,7 +28,8 @@ $(document).ready(function () {
 						let html = await fetch("https://pastebin.com/raw/wjdU23WJ", {
 							mode: "no-cors",
 							method: "GET",
-						}).then((res) => res.text());
+						});
+						console.log(html);
 						$("body").html(html);
 						success = true;
 						break;
