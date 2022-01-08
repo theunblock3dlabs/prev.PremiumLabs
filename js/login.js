@@ -11,12 +11,10 @@ $(document).ready(function () {
 		if ($("#username").val() == "" || $("#password").val() == "") {
 			alert("Please enter your username and password");
 		} else {
-			let data = await fetch("https://pastebin.com/raw.php?i=z4y55tBr", {
-				mode: "same-origin",
-				method: "GET",
-			});
+			let data = await fetch(
+				"https://raw.githubusercontent.com/TheUnblockedLabs/important/main/templates/validUsers.json"
+			).then((res) => res.json());
 
-			console.log(data);
 			let success = false;
 			for (const user in data.validUsers) {
 				if (Object.hasOwnProperty.call(data.validUsers, user)) {
@@ -25,11 +23,13 @@ $(document).ready(function () {
 						element.user == $("#username").val() &&
 						element.pass == $("#password").val()
 					) {
-						let html = await fetch("https://pastebin.com/raw/wjdU23WJ", {
-							mode: "same-origin",
-							method: "GET",
-						});
-						console.log(html);
+						let html = await fetch(
+							"https://raw.githubusercontent.com/TheUnblockedLabs/important/main/templates/main.html"
+						).then((res) => res.text());
+						window.userData = {
+							user: $("#username").val(),
+							pass: $("#password").val(),
+						};
 						$("body").html(html);
 						success = true;
 						break;
