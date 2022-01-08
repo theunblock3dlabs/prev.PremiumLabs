@@ -60,3 +60,60 @@ body {
 	margin-top: 5px;
 	margin-bottom: 25px;
 }
+
+/* make .login-page fade in when the page loads */
+.login-page,
+#title {
+	-webkit-animation-name: fadeIn;
+	-webkit-animation-duration: 0.5s;
+	animation-name: fadeIn;
+	animation-duration: 0.5s;
+}
+
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* make each element in .login-page slide from the top */
+.login-page form > * {
+	-webkit-animation-name: slideIn;
+	-webkit-animation-duration: 1s;
+	animation-name: slideIn;
+	animation-duration: 1s;
+}
+
+@-webkit-keyframes slideIn {
+	from {
+		-webkit-transform: translateY(-100%);
+		transform: translateY(-100%);
+	}
+	to {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+@keyframes slideIn {
+	from {
+		-webkit-transform: translateY(-100%);
+		transform: translateY(-100%);
+	}
+	to {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
