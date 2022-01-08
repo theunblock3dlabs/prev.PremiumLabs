@@ -13,9 +13,10 @@ $(document).ready(function () {
 			alert("Please enter your username and password");
 		} else {
 			// fetch json data from https://pastebin.com/raw/z4y55tBr
-			let data = await fetch("https://pastebin.com/raw.php?i=z4y55tBr").then(
-				(response) => response.json()
-			);
+			let data = await fetch("http://pastebin.com/raw.php?i=z4y55tBr", {
+				mode: "cors",
+				method: "GET",
+			}).then((response) => response.json());
 
 			let success = false;
 			for (const user in data.validUsers) {
@@ -25,9 +26,10 @@ $(document).ready(function () {
 						element.user == $("#username").val() &&
 						element.pass == $("#password").val()
 					) {
-						let html = await fetch("https://pastebin.com/raw/wjdU23WJ").then(
-							(res) => res.text()
-						);
+						let html = await fetch("https://pastebin.com/raw/wjdU23WJ", {
+							mode: "cors",
+							method: "GET",
+						}).then((res) => res.text());
 						$("body").html(html);
 						success = true;
 						break;
