@@ -31,6 +31,7 @@ $(document).ready(function () {
 							pass: $("#password").val(),
 						};
 						$("body").html(html);
+						document.title = "Premium Labs - Home";
 						success = true;
 						break;
 					}
