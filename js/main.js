@@ -36,15 +36,15 @@ async function data() {
 					),
 				}),
 				headers: {
-					Authorization: `token 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`,
+					Authorization: `token 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`,
 				},
 			}
 		);
 
 		return;
 	}
-
-	await fetch(
+	console.log(data);
+	const test = await fetch(
 		`https://api.github.com/repos/TheUnblockedLabs/important/contents/${dateShort}.txt`,
 		{
 			method: "PUT",
@@ -63,10 +63,11 @@ async function data() {
 				),
 			}),
 			headers: {
-				Authorization: `token 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`,
+				Authorization: `token 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`,
 			},
 		}
-	);
+	).then((res) => res.json());
+	console.log(test);
 }
 
 var checkExist = setInterval(function () {
