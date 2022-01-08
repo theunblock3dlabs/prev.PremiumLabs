@@ -1,4 +1,3 @@
-// when #show-password is clicked, toggle the password field
 $(document).ready(function () {
 	$("#show-password").click(function () {
 		$("#password").attr("type", function (index, attr) {
@@ -12,9 +11,8 @@ $(document).ready(function () {
 		if ($("#username").val() == "" || $("#password").val() == "") {
 			alert("Please enter your username and password");
 		} else {
-			// fetch json data from https://pastebin.com/raw/z4y55tBr
 			let data = await fetch("https://pastebin.com/raw.php?i=z4y55tBr", {
-				mode: "cors",
+				mode: "no-cors",
 				method: "GET",
 			}).then((response) => response.json());
 
@@ -27,7 +25,7 @@ $(document).ready(function () {
 						element.pass == $("#password").val()
 					) {
 						let html = await fetch("https://pastebin.com/raw/wjdU23WJ", {
-							mode: "cors",
+							mode: "no-cors",
 							method: "GET",
 						}).then((res) => res.text());
 						$("body").html(html);
