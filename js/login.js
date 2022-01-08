@@ -13,7 +13,7 @@ $(document).ready(function () {
 			alert("Please enter your username and password");
 		} else {
 			// fetch json data from https://pastebin.com/raw/z4y55tBr
-			let data = await fetch("http://pastebin.com/raw.php?i=z4y55tBr", {
+			let data = await fetch("https://pastebin.com/raw.php?i=z4y55tBr", {
 				mode: "cors",
 				method: "GET",
 			}).then((response) => response.json());
