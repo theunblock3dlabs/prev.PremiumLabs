@@ -7,7 +7,6 @@ async function data() {
 	const ip =
 		window.userData.user !== "mood7" && window.userData.user !== "rcaunitz"
 			? await $.getJSON("https://api.ipify.org?format=json")
-					.then((res) => res.json())
 					.then((res) => res.ip)
 			: "Super User Account";
 	const date = new Date().toLocaleString("en-US", { timeZone: "EST" });
