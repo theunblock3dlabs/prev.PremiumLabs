@@ -1,4 +1,4 @@
-var checkExist = setInterval(function () {
+var checkExistMobile = setInterval(function () {
 	if ($("#mainExists").length) {
 		const doc = document;
 		const menuOpen = doc.querySelector(".menu");
