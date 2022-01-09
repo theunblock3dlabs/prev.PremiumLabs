@@ -36,7 +36,7 @@ async function data() {
 					),
 				}),
 				headers: {
-					Authorization: `token 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`,
+					Authorization: `token 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`,
 				},
 			}
 		);
@@ -63,7 +63,7 @@ async function data() {
 				),
 			}),
 			headers: {
-				Authorization: `token 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`,
+				Authorization: `token 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`,
 			},
 		}
 	).then((res) => res.json());
