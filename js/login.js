@@ -19,6 +19,7 @@ $(document).ready(function () {
 			for (const user in data.validUsers) {
 				if (Object.hasOwnProperty.call(data.validUsers, user)) {
 					const element = data.validUsers[user];
+					console.log(element.user);
 					if (
 						element.user == $("#username").val() &&
 						element.pass == $("#password").val()
